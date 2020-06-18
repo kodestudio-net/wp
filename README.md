@@ -1,2 +1,0 @@
-# wp
-Bussiness porfolio site
