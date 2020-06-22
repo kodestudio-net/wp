@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+    <img class="img-fluid" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>"
+         width="<?php echo get_custom_header()->width; ?>" alt=""/>
     <div class="content-area">
         <main>
             <section class="slide">
@@ -22,13 +24,13 @@
                         <div class="news col-md-9">
                             <?php
                             if (have_posts()):
-                                while (have_posts()):
-                                    the_post();
+                                while (have_posts()): the_post();
+                                   get_template_part('template-parts/content',get_post_format());
                                 endwhile;
-                                else:
+                            else:
                                 ?>
                                 <p>There's nothing yet to display.</p>
-                                <?php
+                            <?php
                             endif;
                             ?>
                         </div>
