@@ -12,39 +12,62 @@
             </section>
             <section class="services">
                 <div class="container">
+                    <h1>Our Services</h1>
                     <div class="row">
-                        Service
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <?php
+                                if (is_active_sidebar('service-1')) {
+                                    dynamic_sidebar('service-1');
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <?php
+                                if (is_active_sidebar('service-2')) {
+                                    dynamic_sidebar('service-2');
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <?php
+                                if (is_active_sidebar('service-3')) {
+                                    dynamic_sidebar('service-3');
+                                }
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
             <section class="middle-area">
                 <div class="container">
                     <div class="row">
-                        <aside class="sidebar col-md-3">Sidebar</aside>
+                        <aside class="sidebar col-md-3 h-100"><?php get_sidebar('home'); ?></aside>
                         <div class="news col-md-9">
-                            <?php
-                            if (have_posts()):
-                                while (have_posts()): the_post();
+                            <div class="container">
+                                <div class="row">
+                                    <?php
+                                    $filters = [];
+                                    $featured = new WP_Query($filters);
+                                    if ($featured->have_posts()):
+                                        while ($featured->have_posts()):
+                                            $featured->the_post();
+                                            ?>
+                                            <div class="col-12">
+                                                <?php get_template_part('template-parts/content', 'featured'); ?>
+                                            </div>
+                                        <?php
+                                        endwhile;
+                                        wp_reset_postdata();
+                                    endif;
                                     ?>
-                                    <article>
-                                        <h2><?php the_title(); ?></h2>
-                                        <h2><?php the_post_thumbnail([275, 275]); ?></h2>
-                                        <div class="meta-info">
-                                            <p>Posted in <?php echo get_the_date(); ?>
-                                                by <?php the_author_posts_link(); ?></p>
-                                            <p>Categories <?php the_category(' '); ?></p>
-                                            <p><?php the_tags('Tags: ', ', '); ?></p>
-                                        </div>
-                                        <p><?php the_content(); ?></p>
-                                    </article>
-                                <?php
-                                endwhile;
-                            else:
-                                ?>
-                                <p>There's nothing yet to display.</p>
-                            <?php
-                            endif;
-                            ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

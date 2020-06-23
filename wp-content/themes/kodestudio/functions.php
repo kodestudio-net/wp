@@ -42,4 +42,31 @@ function kodestudio_sidebars(){
         'before_title'=>'<h2 class="widget-title">',
         'after_title'=>'</h2>'
     ]);
+    register_sidebar([
+        'name'=>'Service 1',
+        'id'=>'service-1',
+        'description'=>'This is service 1 section',
+        'before_widget'=>'<div class="widget-wrapper">',
+        'after_widget'=>'</div>',
+        'before_title'=>'<h2 class="widget-title">',
+        'after_title'=>'</h2>'
+    ]);
+    register_sidebar([
+        'name'=>'Service 2',
+        'id'=>'service-2',
+        'description'=>'This is service 2 section',
+        'before_widget'=>'<div class="widget-wrapper">',
+        'after_widget'=>'</div>',
+        'before_title'=>'<h2 class="widget-title">',
+        'after_title'=>'</h2>'
+    ]);
+    register_sidebar([
+        'name'=>'Service 3',
+        'id'=>'service-3',
+        'description'=>'This is service 3 section',
+        'before_widget'=>'<div class="widget-wrapper">',
+        'after_widget'=>'</div>',
+        'before_title'=>'<h2 class="widget-title">',
+        'after_title'=>'</h2>'
+    ]);
 }
