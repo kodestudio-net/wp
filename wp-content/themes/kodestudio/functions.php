@@ -1,4 +1,5 @@
 <?php
+
 function load_scripts()
 {
     wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', ['jquery'], '4.5.0', true);
