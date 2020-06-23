@@ -47,7 +47,7 @@
             <section class="middle-area">
                 <div class="container">
                     <div class="row">
-                        <aside class="sidebar col-md-3 h-100"><?php get_sidebar('home'); ?></aside>
+                        <?php get_sidebar('home'); ?>
                         <div class="news col-md-9">
                             <div class="container">
                                 <div class="row">

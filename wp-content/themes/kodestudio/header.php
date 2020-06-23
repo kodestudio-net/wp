@@ -21,7 +21,7 @@
             <div class="align">
                 <div class="row">
                     <section class="logo col-md-2 col-sm12 col-12 text-center">logo</section>
-                    <nav class="main-menu col-md-8 text-right"><?php wp_nav_menu(['theme_location' => 'kodestudio_main_menu']) ?></nav>
+                    <nav class="main-menu col-md-8 text-right"><?php wp_nav_menu(['theme_location' => 'kodestudio_main_menu']); ?></nav>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ function load_scripts()
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 
+
 function kodestudio_config()
 {
     register_nav_menus([
@@ -23,51 +24,53 @@ function kodestudio_config()
 
 add_action('after_setup_theme', 'kodestudio_config', 0);
 add_action('widgets_init','kodestudio_sidebars');
-
-function kodestudio_sidebars(){
-    register_sidebar([
-        'name'=>'Home Page Sidebar',
-        'id'=>'sidebar-1',
-        'description'=>'This is home page sidebar section',
-        'before_widget'=>'<div class="widget-wrapper">',
-        'after_widget'=>'</div>',
-        'before_title'=>'<h2 class="widget-title">',
-        'after_title'=>'</h2>'
-    ]);
-    register_sidebar([
-        'name'=>'Blog Sidebar',
-        'id'=>'sidebar-2',
-        'description'=>'This is blog sidebar section',
-        'before_widget'=>'<div class="widget-wrapper">',
-        'after_widget'=>'</div>',
-        'before_title'=>'<h2 class="widget-title">',
-        'after_title'=>'</h2>'
-    ]);
-    register_sidebar([
-        'name'=>'Service 1',
-        'id'=>'service-1',
-        'description'=>'This is service 1 section',
-        'before_widget'=>'<div class="widget-wrapper">',
-        'after_widget'=>'</div>',
-        'before_title'=>'<h2 class="widget-title">',
-        'after_title'=>'</h2>'
-    ]);
-    register_sidebar([
-        'name'=>'Service 2',
-        'id'=>'service-2',
-        'description'=>'This is service 2 section',
-        'before_widget'=>'<div class="widget-wrapper">',
-        'after_widget'=>'</div>',
-        'before_title'=>'<h2 class="widget-title">',
-        'after_title'=>'</h2>'
-    ]);
-    register_sidebar([
-        'name'=>'Service 3',
-        'id'=>'service-3',
-        'description'=>'This is service 3 section',
-        'before_widget'=>'<div class="widget-wrapper">',
-        'after_widget'=>'</div>',
-        'before_title'=>'<h2 class="widget-title">',
-        'after_title'=>'</h2>'
-    ]);
+if ( ! function_exists( 'kodestudio_sidebars' ) ) {
+    function kodestudio_sidebars()
+    {
+        register_sidebar([
+            'name' => 'Home Page Sidebar',
+            'id' => 'sidebar-1',
+            'description' => 'This is home page sidebar section',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        ]);
+        register_sidebar([
+            'name' => 'Blog Sidebar',
+            'id' => 'sidebar-2',
+            'description' => 'This is blog sidebar section',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        ]);
+        register_sidebar([
+            'name' => 'Service 1',
+            'id' => 'service-1',
+            'description' => 'This is service 1 section',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        ]);
+        register_sidebar([
+            'name' => 'Service 2',
+            'id' => 'service-2',
+            'description' => 'This is service 2 section',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        ]);
+        register_sidebar([
+            'name' => 'Service 3',
+            'id' => 'service-3',
+            'description' => 'This is service 3 section',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        ]);
+    }
 }
